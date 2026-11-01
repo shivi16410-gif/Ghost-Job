@@ -3,10 +3,5 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm ci",
-  "functions": {
-    "api/**/*.py": {
-      "excludeFiles": "{tests/**,__pycache__/**,**/*.pyc,backend/tests/**}"
-    }
-  }
+  "installCommand": "npm ci"
 }
