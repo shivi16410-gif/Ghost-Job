@@ -6,8 +6,8 @@ import { supabase } from './lib/supabase';
 
 const Icon=({children, className=''})=><span aria-hidden="true" className={'icon '+className}>{children}</span>;
 const Arrow=()=> <Icon>↗</Icon>;
-const API_URL=import.meta.env.VITE_API_URL||'http://localhost:8000';
-function Logo({onHome}){return <a href={onHome?'#':'#top'} onClick={e=>{if(onHome){e.preventDefault();onHome()}}} className="logo" aria-label="GhostJob home"><span className="ghost">◒</span><span>GHOSTJOB<span className="dot">.</span></span></a>}
+const API_URL=import.meta.env.VITE_API_URL || (import.meta.env.DEV?'http://localhost:8000':'');
+function Logo({onHome}){return <a href={onHome?'#':'#top'} onClick={e=>{if(onHome){e.preventDefault();onHome()}}} className="logo" aria-label="GhostJob home"><img className="logo-mark" src="/ghostjob-mark.jpg" alt=""/><span>GHOSTJOB<span className="dot">.</span></span></a>}
 function Button({children,outline=false,onClick, type='button', className=''}){return <button type={type} onClick={onClick} className={`button ${outline?'outline':''} ${className}`}>{children}<Arrow/></button>}
 const Stat=({number,label,trend})=><div className="stat"><span className="stat-label">{label}</span><strong>{number}</strong>{trend&&<small>{trend}</small>}</div>;
 
